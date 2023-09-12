@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marriage Registration Form</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Add custom CSS for styling -->
+    <style>
+        /* Center the form */
+        body {
+            background-color: #9ba2de; /* Change to your desired background color */
+        }
+
+        /* Center the form */
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff; /* Form background color */
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Style form headers */
+        .form-header {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        /* Style submit button */
+        .submit-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+        }
+
+        /* Style radio and checkbox labels */
+        .custom-control-label::before {
+            background-color: #007BFF;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Style form headers */
+        .form-header {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Style submit button */
+        .submit-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+        }
+
+        /* Style radio and checkbox labels */
+        .custom-control-label::before {
+            background-color: #007BFF;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container form-container">
+        <div class="form-header">
+            <h2 class="text-center">Marriage Registration Form</h2>
+        </div>
+        <form action="submit_registration.php" method="POST" enctype="multipart/form-data">
+
+            <div class="form-group">
+                <h3>Personal Information</h3>
+                <label style="font-weight: bold; font-size:medium;">Gender:</label>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="male" name="gender" value="Male" class="custom-control-input">
+                    <label class="custom-control-label" for="male">Male</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="female" name="gender" value="Female" class="custom-control-input">
+                    <label class="custom-control-label" for="female">Female</label>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                
+                <label for="marriageType" style="font-weight: bold; font-size:medium;">Marriage Type:</label>
+                <select id="marriageType" name="marriageType" class="form-control">
+                    <option value="New">New</option>
+                    <option value="Widow">Widow</option>
+                    <option value="Widower">Widower</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="name" style="font-weight: bold; font-size:medium;" >Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+            <label for="age" style="font-weight: bold; font-size:medium;">Age:</label>
+            <input type="number" class="form-control" id="age" name="age" required>
+            </div>
+
+            <div class="form-group">
+                <label for="qualification" style="font-weight: bold; font-size:medium;">Educational Qualification:</label>
+                <div class="custom-control form-check custom-control-inline">
+                    <input type="checkbox" id="highSchool" name="education[]" value="High School" class="form-check-input">
+                    <label class="form-check-label" for="highSchool">High School</label>
+                </div>
+                <div class="custom-control form-check custom-control-inline">
+                    <input type="checkbox" id="inter" name="education[]" value="Inter" class="form-check-input">
+                    <label class="form-check-label" for="inter">Inter</label>
+                </div>
+                <div class="custom-control form-check custom-control-inline">
+                    <input type="checkbox" id="graduation" name="education[]" value="Graduation" class="form-check-input">
+                    <label class="form-check-label" for="graduation">Graduation</label>
+                </div>
+                <div class="custom-control form-check custom-control-inline">
+                    <input type="checkbox" id="masters" name="education[]" value="Masters" class="form-check-input">
+                    <label class="form-check-label" for="masters">Masters</label>
+                </div>
+                <div class="custom-control form-check custom-control-inline">
+                    <input type="checkbox" id="diploma" name="education[]" value="Diploma" class="form-check-input">
+                    <label class="form-check-label" for="diploma">Diploma</label>
+                </div>
+                <div class="custom-control form-check custom-control-inline">
+                    <input type="checkbox" id="other" name="education[]" value="Other" class="form-check-input">
+                    <label class="form-check-label" for="other">Other</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="height" style="font-weight: bold; font-size:medium;">Height (in cm):</label>
+                <input type="number" class="form-control" id="height" name="height">
+            </div>
+           
+            <div class="form-group">
+                <label for="color" style="font-weight: bold; font-size:medium;">Skin tone:-</label>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="veryfair" name="color" value="veryFair" class="custom-control-input">
+                    <label class="custom-control-label" for="veryfair">Very Fair</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="fair" name="color" value="fair" class="custom-control-input">
+                    <label class="custom-control-label" for="fair">Fair</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="wheatist" name="color" value="wheatist"  class="custom-control-input">
+                    <label class="custom-control-label" for="wheatist">Wheatist</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="dark" name="color" value="dark" class="custom-control-input">
+                    <label class="custom-control-label" for="dark">Dark</label>
+                </div>
+            </div>
+
+
+            <!-- Gender and Religion -->
+            <div class="form-group">
+                <label style="font-weight: bold; font-size:medium;">Annual Income:</label>
+                <input type="text" class="form-control" id="annualIncome" name="annualIncome">
+                </div>
+            
+            <div class="form-group">
+                <label style="font-weight: bold; font-size:medium;">Religion:</label>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="hindu" name="religion" value="Hindu" class="custom-control-input">
+                    <label class="custom-control-label" for="hindu">Hindu</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="muslim" name="religion" value="Muslim" class="custom-control-input">
+                    <label class="custom-control-label" for="muslim">Muslim</label>
+                </div>
+            </div>
+
+          
+               
+            
+            <!-- Caste Category and Caste -->
+            <div class="form-group">
+                <label for="Category" style="font-weight: bold; font-size:medium;"> Caste Category:</label>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="gen" name="casteCategory" value="Gen." class="custom-control-input">
+                    <label class="custom-control-label" for="gen">Gen.</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="obc" name="casteCategory" value="OBC" class="custom-control-input">
+                    <label class="custom-control-label" for="obc">OBC</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="sc" name="casteCategory" value="SC" class="custom-control-input">
+                    <label class="custom-control-label" for="sc">SC</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="st" name="casteCategory" value="ST" class="custom-control-input">
+                    <label class="custom-control-label" for="st">ST</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="caste" style="font-weight: bold; font-size:medium;">Caste:</label>
+                <input type="text" class="form-control" id="caste" name="caste">
+            </div>
+
+
+            <div class="form-group">
+                
+                <label for="smoking" style="font-weight: bold; font-size:medium;">Do you smoke?</label>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="smokingYes" name="smoking" value="Yes" class="custom-control-input">
+                    <label class="custom-control-label" for="smokingYes">Yes</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="smokingOccasionally" name="smoking" value="smokingOccasionally" class="custom-control-input">
+                    <label class="custom-control-label" for="smokingOccasionally">Occasionally</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="smokingNo" name="smoking" value="No" class="custom-control-input">
+                    <label class="custom-control-label" for="smokingNo">No</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+            <label for="drinking" style="font-weight: bold; font-size:medium;">Do you drink?</label>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="drinkingYes" name="drinking" value="Yes" class="custom-control-input">
+                <label class="custom-control-label" for="drinkingYes">Yes</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="drinkinOccasionally" name="smoking" value="drinkinOccasionally" class="custom-control-input">
+                <label class="custom-control-label" for="drinkinOccasionally">Occasionally</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="drinkingNo" name="drinking" value="No" class="custom-control-input">
+                <label class="custom-control-label" for="drinkingNo">No</label>
+            </div>
+            </div>
+
+            <!-- Family Information -->
+            <div class="form-group">
+                <label for="fatherName" style="font-weight: bold; font-size:medium;">Father's Name:</label>
+                <input type="text" class="form-control" id="fatherName" name="fatherName">
+            </div>
+
+            <div class="form-group">
+                <label for="village" style="font-weight: bold; font-size:medium;">Village Name:</label>
+                <input type="text" class="form-control" id="village" name="village">
+            </div>
+
+            <div class="form-group">
+                <label for="post" style="font-weight: bold; font-size:medium;">Post:</label>
+                <input type="text" class="form-control" id="post" name="post">
+            </div>
+
+            <div class="form-group">
+                <label for="city" style="font-weight: bold; font-size:medium;">City:</label>
+                <input type="text" class="form-control" id="city" name="city">
+            </div>
+
+            <div class="form-group">
+                <label for="numBrothers" style="font-weight: bold; font-size:medium;">Number of Brothers:</label>
+                <input type="number" class="form-control" id="numBrothers" name="numBrothers">
+            </div>
+
+            <div class="form-group">
+                <label for="numSisters" style="font-weight: bold; font-size:medium;">Number of Sisters:</label>
+                <input type="number" class="form-control" id="numSisters" name="numSisters">
+            </div>
+
+            <!-- Add more fields as needed -->
+
+            <!-- Upload Documents -->
+            <div class="form-group">
+                <h3>Upload Documents</h3>
+                <label for="photo" style="font-weight: bold; font-size:medium;">Full Photo:</label>
+                <input type="file" class="form-control-file" id="photo" name="photo" accept="image/*" required>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn submit-button">Submit</button>
+            </div>
+        </form>
+    </div>
+
+           
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+
+</body>
+</html>
